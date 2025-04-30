@@ -13,10 +13,6 @@ int main() {
 		cin >> a[i];
 	}
 
-	// int x = sizeof(a) / sizeof(a[0]);
-
-	// sort(a, a + x);
-
 	for(int i = n-1; i >= 0 ; i--) {
 		cout << a[i] << " ";
 	}
