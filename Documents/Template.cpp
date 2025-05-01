@@ -38,19 +38,7 @@ void solve() {
     int n;
     cin >> n;
 
-    if(n == 1) {
-    	cout << "Hello";
-    }else {
-    	cout << "Hello World";
-    }
-
     cout << endl;
-    // vi arr(n);
-    // rep(i, 0, n) cin >> arr[i];
-
-    // ll sum = 0;
-    // rep(i, 0, n) sum += arr[i];
-    // cout << sum << endl;
 }
 
 int main() {
@@ -58,11 +46,7 @@ int main() {
 
     auto start = chrono::high_resolution_clock::now();
 
-    int t; 
-    cin >> t;
-    while(t--) {
-        solve();
-    }
+    solve();
 
     auto end = chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);

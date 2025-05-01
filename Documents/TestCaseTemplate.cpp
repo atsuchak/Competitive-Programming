@@ -10,8 +10,8 @@ void fastIO() {
 #define endl "\n"
 #define pb push_back
 #define mp make_pair
-#define ff first;
-#define ss second;
+#define ff first
+#define ss second
 #define ll long long
 #define vi vector<int>
 #define vl vector<ll>
@@ -38,7 +38,12 @@ void solve() {
     int n;
     cin >> n;
 
-    cout << endl;
+    vi arr(n);
+    rep(i, 0, n) cin >> arr[i];
+
+    ll sum = 0;
+    rep(i, 0, n) sum += arr[i];
+    cout << sum << endl;
 }
 
 int main() {
@@ -46,7 +51,11 @@ int main() {
 
     auto start = chrono::high_resolution_clock::now();
 
-    solve();
+    int t; 
+    cin >> t;
+    while(t--) {
+        solve();
+    }
 
     auto end = chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);
