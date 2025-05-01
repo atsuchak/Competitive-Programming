@@ -34,16 +34,22 @@ void sortArray(int *a, int n){
     sort(a, a+n);
 }
 
+void ignoreDublicate(string &n) {
+  	sort(all(n));
+  	n.erase(unique(all(n)), n.end());
+}
+
 void solve() {
-    int n;
+    string n;
     cin >> n;
 
-    vi arr(n);
-    rep(i, 0, n) cin >> arr[i];
+    ignoreDublicate(n);
 
-    ll sum = 0;
-    rep(i, 0, n) sum += arr[i];
-    cout << sum << endl;
+    if(sz(n) % 2 == 0) {
+    	cout << "CHAT WITH HER!";
+    }else {
+    	cout << "IGNORE HIM!";
+    }
 
     cout << endl;
 }
@@ -53,11 +59,7 @@ int main() {
 
     auto start = chrono::high_resolution_clock::now();
 
-    int t; 
-    cin >> t;
-    while(t--) {
-        solve();
-    }
+    solve();
 
     auto end = chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);
