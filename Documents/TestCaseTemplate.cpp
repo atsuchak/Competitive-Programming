@@ -44,6 +44,8 @@ void solve() {
     ll sum = 0;
     rep(i, 0, n) sum += arr[i];
     cout << sum << endl;
+
+    cout << endl;
 }
 
 int main() {
