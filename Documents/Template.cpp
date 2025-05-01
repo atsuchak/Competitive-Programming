@@ -7,38 +7,34 @@ void fastIO() {
     cout.tie(NULL);
 }
 
-#define endl "\n"
+#define ll long long
+#define vi vector<int>
+#define vl vector<ll>
+#define pii pair<int, int>
+#define pll pair<ll, ll>
+#define vpii vector<pii>
+#define vpll vector<pll>
 #define pb push_back
 #define mp make_pair
 #define ff first
 #define ss second
-#define ll long long
-#define vi vector<int>
-#define vl vector<ll>
-#define vpii vector<pair<int, int>>
-#define vpll vector<pair<ll, ll>>
-#define rep(i, a, b) for (int i = a; i < b; i++)
-#define rrep(i, a, b) for (int i = a; i >= b; i--)
-#define all(x) x.begin(), x.end()
-#define sz(x) (int)(x.size())
-#define PI 3.1415
-#define INF 1e9
-#define LINF 1e18
+#define endl "\n"
+#define all(x) (x).begin(), (x).end()
+#define sz(x) (int)(x).size()
+#define rep(i, a, b) for (int i = (a); i < (b); ++i)
+#define rrep(i, a, b) for (int i = (a); i >= (b); --i)
+const int INF = 1e9;
+const ll LINF = 1e18;
+const double PI = 3.141592653589793;
 
-void lowerCase(string &a, string &b) {
-    transform(all(a), a.begin(), ::tolower);
-    transform(all(b), b.begin(), ::tolower);
-}
-
-void sortArray(int *a, int n){
-    sort(a, a+n);
+void printVec(const vi &v) {
+    for (int x : v) cout << x << " ";
+    cout << endl;
 }
 
 void solve() {
-    int n;
-    cin >> n;
 
-    cout << endl;
+
 }
 
 int main() {

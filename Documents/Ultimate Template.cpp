@@ -7,6 +7,7 @@ void fastIO() {
     cout.tie(NULL);
 }
 
+#define MOD 1000000007
 #define ll long long
 #define vi vector<int>
 #define vl vector<ll>
@@ -27,8 +28,6 @@ const int INF = 1e9;
 const ll LINF = 1e18;
 const double PI = 3.141592653589793;
 
-#define MOD 1000000007
-
 int gcd(int a, int b) {
     return b == 0 ? a : gcd(b, a % b);
 }
@@ -47,6 +46,7 @@ bool isPrime(int n) {
     return true;
 }
 
+// Sieve of Eratosthenes
 vector<bool> sieve(int n) {
     vector<bool> isPrime(n + 1, true);
     isPrime[0] = isPrime[1] = false;
@@ -79,13 +79,48 @@ vector<ll> factorialMod(int n, ll mod = MOD) {
     return fact;
 }
 
-ll factorial(int n) {
-    if (n == 0 || n == 1) return 1;
-    long long result = 1;
-    for (int i = 2; i <= n; i++) {
-        result *= i;
+void toLowerCase(string &a, string &b) {
+    transform(a.begin(), a.end(), a.begin(), ::tolower);
+    transform(b.begin(), b.end(), b.begin(), ::tolower);
+}
+
+void removeSpaces(string &s) {
+    s.erase(remove(s.begin(), s.end(), ' '), s.end());
+}
+
+void ignoreDuplicate(string &s) {
+    sort(s.begin(), s.end());
+    s.erase(unique(s.begin(), s.end()), s.end());
+}
+
+void sortArray(int *a, int n) {
+    sort(a, a + n);
+}
+
+unordered_map<int, int> frequencyMap(const vector<int> &v) {
+    unordered_map<int, int> freq;
+    for (int x : v) freq[x]++;
+    return freq;
+}
+
+pair<int, int> reverseAndSumDigits(int n) {
+    int rev = 0, sum = 0;
+    while (n > 0) {
+        int d = n % 10;
+        rev = rev * 10 + d;
+        sum += d;
+        n /= 10;
     }
-    return result;
+    return {rev, sum};
+}
+
+int reverseDigits(int n) {
+    int rev = 0;
+    while (n > 0) {
+        rev = rev * 10 + (n % 10);
+        n /= 10;
+    }
+    return rev;
 }
 
 void printVec(const vi &v) {
@@ -95,11 +130,6 @@ void printVec(const vi &v) {
 
 void solve() {
 
-    cout << "This is my first c++ code." << endl;
-    int n;
-    cin >> n;
-    cout << "Factorial of number " << n << " is: ";
-    cout << factorial(n) << endl;
 
 }
 
