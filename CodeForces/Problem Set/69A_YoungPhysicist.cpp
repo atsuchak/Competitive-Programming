@@ -39,7 +39,6 @@ void solve() {
 
 	int sumX = 0, sumY = 0, sumZ = 0;
 
-
 	while (t--) {
 		cin >> x >> y >> z;
 		sumX += x;
@@ -52,10 +51,6 @@ void solve() {
 	} else {
 		cout << "NO";
 	}
-
-
-
-
 }
 
 int main() {
