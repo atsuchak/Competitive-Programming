@@ -27,67 +27,6 @@ const int INF = 1e9;
 const ll LINF = 1e18;
 const double PI = 3.141592653589793;
 
-#define MOD 1000000007
-
-int gcd(int a, int b) {
-    return b == 0 ? a : gcd(b, a % b);
-}
-
-int lcm(int a, int b) {
-    return a / gcd(a, b) * b;
-}
-
-bool isPrime(int n) {
-    if (n <= 1) return false;
-    if (n <= 3) return true;
-    if (n % 2 == 0 || n % 3 == 0) return false;
-    for (int i = 5; i * i <= n; i += 6)
-        if (n % i == 0 || n % (i + 2) == 0)
-            return false;
-    return true;
-}
-
-vector<bool> sieve(int n) {
-    vector<bool> isPrime(n + 1, true);
-    isPrime[0] = isPrime[1] = false;
-    for (int i = 2; i * i <= n; i++)
-        if (isPrime[i])
-            for (int j = i * i; j <= n; j += i)
-                isPrime[j] = false;
-    return isPrime;
-}
-
-ll modPow(ll base, ll exp, ll mod = MOD) {
-    ll result = 1;
-    base %= mod;
-    while (exp > 0) {
-        if (exp % 2 == 1) result = (result * base) % mod;
-        base = (base * base) % mod;
-        exp /= 2;
-    }
-    return result;
-}
-
-ll modInverse(ll a, ll mod = MOD) {
-    return modPow(a, mod - 2, mod);
-}
-
-vector<ll> factorialMod(int n, ll mod = MOD) {
-    vector<ll> fact(n + 1, 1);
-    for (int i = 1; i <= n; i++)
-        fact[i] = (fact[i - 1] * i) % mod;
-    return fact;
-}
-
-ll factorial(int n) {
-    if (n == 0 || n == 1) return 1;
-    long long result = 1;
-    for (int i = 2; i <= n; i++) {
-        result *= i;
-    }
-    return result;
-}
-
 void printVec(const vi &v) {
     for (int x : v) cout << x << " ";
     cout << endl;
@@ -95,11 +34,25 @@ void printVec(const vi &v) {
 
 void solve() {
 
-    cout << "This is my first c++ code." << endl;
     int n;
     cin >> n;
-    cout << "Factorial of number " << n << " is: ";
-    cout << factorial(n) << endl;
+
+
+    int x, y, z;
+    int sumX = 0, sumY = 0, sumZ = 0;
+
+    while (n--) {
+        cin >> x >> y >> z;
+        sumX += x;
+        sumY += y;
+        sumZ += z;
+    }
+
+    if (sumX == 0 && sumY == 0 && sumZ == 0) {
+        cout << "YES";
+    } else {
+        cout << "NO";
+    }
 
 }
 
