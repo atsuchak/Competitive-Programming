@@ -32,27 +32,22 @@ void printVec(const vi &v) {
 	cout << endl;
 }
 
-bool checkVowel(char c) {
-	c = tolower(c);
-	if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'y') {
-		return 1;
-	} else {
-		return 0;
-	}
-}
-
 void solve() {
 
-	string st;
-	cin >> st;
+	int cost, dollar, n;
+	cin >> cost >> dollar >> n;
 
-	for (char c : st) {
-		if (!checkVowel(c)) {
-			cout << '.' << (char)tolower(c);
-		}
+	int totalCost = 0;
+
+	for (int i = 1; i <= n; i++) {
+		totalCost += i * cost;
 	}
 
-
+	if (totalCost < dollar) {
+		cout << 0;
+	} else {
+		cout << totalCost - dollar;
+	}
 
 }
 

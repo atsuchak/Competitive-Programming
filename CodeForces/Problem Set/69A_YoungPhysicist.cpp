@@ -32,25 +32,27 @@ void printVec(const vi &v) {
 	cout << endl;
 }
 
-bool checkVowel(char c) {
-	c = tolower(c);
-	if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'y') {
-		return 1;
-	} else {
-		return 0;
-	}
-}
-
 void solve() {
 
-	string st;
-	cin >> st;
+	int t; cin >> t;
+	int x, y, z;
 
-	for (char c : st) {
-		if (!checkVowel(c)) {
-			cout << '.' << (char)tolower(c);
-		}
+	int sumX = 0, sumY = 0, sumZ = 0;
+
+
+	while (t--) {
+		cin >> x >> y >> z;
+		sumX += x;
+		sumY += y;
+		sumZ += z;
 	}
+
+	if (sumX == 0 && sumY == 0 && sumZ == 0) {
+		cout << "YES";
+	} else {
+		cout << "NO";
+	}
+
 
 
 

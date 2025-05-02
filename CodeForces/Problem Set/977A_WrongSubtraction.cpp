@@ -32,26 +32,21 @@ void printVec(const vi &v) {
 	cout << endl;
 }
 
-bool checkVowel(char c) {
-	c = tolower(c);
-	if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'y') {
-		return 1;
-	} else {
-		return 0;
-	}
-}
-
 void solve() {
 
-	string st;
-	cin >> st;
+	int digit;
+	cin >> digit;
+	int n; cin >> n;
 
-	for (char c : st) {
-		if (!checkVowel(c)) {
-			cout << '.' << (char)tolower(c);
+	for (int i = 0; i < n; i++) {
+		if (digit % 10 ==  0) {
+			digit = digit / 10;
+		} else {
+			digit = digit - 1;
 		}
 	}
 
+	cout << digit;
 
 
 }

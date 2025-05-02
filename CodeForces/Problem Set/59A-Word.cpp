@@ -32,29 +32,35 @@ void printVec(const vi &v) {
 	cout << endl;
 }
 
-bool checkVowel(char c) {
-	c = tolower(c);
-	if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'y') {
-		return 1;
-	} else {
-		return 0;
-	}
-}
-
 void solve() {
 
-	string st;
-	cin >> st;
+	string word;
+	cin >> word;
 
-	for (char c : st) {
-		if (!checkVowel(c)) {
-			cout << '.' << (char)tolower(c);
+	int upCount = 0;
+	int lowerCount = 0;
+
+	for (char val : word) {
+		if (val == 'A' || val == 'B' || val == 'C' || val == 'D' || val == 'E' || val == 'F' || val == 'G' || val == 'H' || val == 'I' || val == 'J' || val == 'K' || val == 'L' || val == 'M' || val == 'N' || val == 'O' || val == 'P' || val == 'Q' || val == 'R' || val == 'S' || val == 'T' || val == 'U' || val == 'V' || val == 'W' || val == 'X' || val == 'Y' || val == 'Z') {
+			upCount++;
+		} else {
+			lowerCount++;
+
 		}
+
 	}
 
 
-
+	if (upCount > lowerCount) {
+		for (char val : word)
+			cout << (char)toupper(val);
+	} else {
+		for (char val : word)
+			cout << (char)tolower(val);
+	}
 }
+
+
 
 int main() {
 	fastIO();
