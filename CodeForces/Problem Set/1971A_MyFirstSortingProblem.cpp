@@ -40,12 +40,7 @@ void solve() {
 
 	while (t--) {
 		cin >> x >> y;
-		if (x > y) {
-			swap(x, y);
-			cout << x << " " << y << endl;
-		} else {
-			cout << x << " " << y << endl;
-		}
+		cout << min(x, y) << " " << max(x, y) << endl;
 	}
 
 
