@@ -20,18 +20,6 @@ My goal in maintaining this repository is to:
 
 ## Structure
 
-The repository is organized (or will be organized) as follows:
-
-├── Competitive Programming/
-│   ├── PlatformName/
-│   │   ├── ContestName/     
-│   │   │   └── solution.cpp 
-│   │   ├── PracticeSetName/ 
-│   │   │   └── solution.cpp 
-│   │   └── ...
-
-Where:
-
 * `Competitive Programming/` is the root directory for all competitive programming solutions.
 * `PlatformName` indicates the online judge or contest platform (e.g., Codeforces, CodeChef, LeetCode).
 * `ContestName` is the name or identifier of a specific contest (e.g., Codeforces Round #XXX, ABCXXX).
