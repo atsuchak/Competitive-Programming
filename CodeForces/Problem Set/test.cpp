@@ -1,32 +1,22 @@
-#include <bits/stdc++.h>
-using namespace std;
+class Solution {
+public:
+    int romanToInt(string s) {
+      map<Character, Integer> m1 = new HashMap<>();
+      map.put('I', 1);  
+      map.put('V', 5);  
+      map.put('X', 10);  
+      map.put('L', 50);  
+      map.put('C', 100);  
+      map.put('D', 500);  
+      map.put('M', 1000);  
 
-#define ff first
-#define ss second
-#define all(x) (x).begin(), (x).end()
-#define sz(x) (int)(x).size()
-
-void solve()
-{
-    int t;
-    cin >> t;
-    int count = 0;
-    string st, store;
-    for(int i = 0; i < t; i++) {
-        cin >> st;
-        if(i == 0 || st != store) count++;
-        store = st;
+      int result = map.get(s.chatAt(s.length()-1));
+      for(int i = s.length()-2; i >= 0; i--) {
+        if(map.get(s.charAt(i)) < map.get(s.charAt(i+1))) {
+            result -= map.get(s.charAt(i));
+        }else {
+            result += map.get(s.charAt(i));
+        }
+      }
     }
-    cout << count << endl;
-}
-
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-
-    solve();
-
-    return 0;
-}
+};
