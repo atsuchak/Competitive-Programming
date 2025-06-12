@@ -1,43 +1,20 @@
-#include <bits/stdc++.h>
-using namespace std;
+class Solution {
+public:
+    int romanToInt(string s) {
+        unordered_map<char, int> map;
+        map['I'] = 1;
+        map['V'] = 5;
+        map['X'] = 10;
+        map['L'] = 50;
+        map['C'] = 100;
+        map['D'] = 500;
+        map['M'] = 1000;
 
-int value(char c) {
-    if(c == 'I') return 1;
-    if(c == 'V') return 5;
-    if(c == 'X') return 10;
-    if(c == 'L') return 50;
-    if(c == 'C') return 100;
-    if(c == 'D') return 500;
-    if(c == 'M') return 1000;
-}
-
-int chngToInt(string s) {
-    int total = 0;
-    int prev = 0;
-
-    for(int i = s.size()-1; i >= 0; i--) {
-        int curr = value(s[i]);
-
-        if(curr < prev) {
-            total -= curr;
-        }else {
-            total += curr;
+        int result = map[s[s.length()-1]];
+        for(int i = s.length()-2; i >= 0; i--) {
+            if(map[s[i]] < map[s[i+1]]) result -= map[s[i]];
+            else result += map[s[i]];
         }
-        
-        prev = curr;
+        return result;
     }
-
-    return total;
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(0); cout.tie(0);
-
-    string s;
-    getline(cin, s);
-
-    cout << chngToInt(s);
-
-    return 0;
-}
+};
