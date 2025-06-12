@@ -7,15 +7,12 @@ using namespace std;
 #define sz(x) (int)(x).size()
 
 void solve() {
-    int n; cin >> n;
-    int sum = 0;
-    for(int i = 1; i <= n; i+=2) {
-        sum -= i;
+    int n[4];
+    for(int i = 0; i < 4; i++) {
+        cin >> n[i];
     }
-    for(int j = 2; j <= n; j+=2) {
-        sum += j;
-    }
-    cout << sum << endl; 
+    set<int> s(n, n + 4);
+    cout << 4 - s.size();
 }
 
 int main() {

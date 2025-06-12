@@ -8,14 +8,15 @@ using namespace std;
 
 void solve() {
     int n; cin >> n;
-    int sum = 0;
-    for(int i = 1; i <= n; i+=2) {
-        sum -= i;
+    int arr[n];
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
     }
-    for(int j = 2; j <= n; j+=2) {
-        sum += j;
+    double sum = 0;
+    for(int i = 0; i < n; i++) {
+        sum += arr[i];
     }
-    cout << sum << endl; 
+    cout << double(sum/n) << endl;
 }
 
 int main() {

@@ -8,14 +8,18 @@ using namespace std;
 
 void solve() {
     int n; cin >> n;
-    int sum = 0;
-    for(int i = 1; i <= n; i+=2) {
-        sum -= i;
+    int p[n];
+    for(int i = 0; i < n; i++) {
+        cin >> p[i];
     }
-    for(int j = 2; j <= n; j+=2) {
-        sum += j;
+    for(int i = 1; i <= n; i++) {
+        for(int j = 0; j < n; j++) {
+            if(p[j] == i) {
+                cout << j+1 << " ";
+            }
+        }
     }
-    cout << sum << endl; 
+    cout << endl;
 }
 
 int main() {
