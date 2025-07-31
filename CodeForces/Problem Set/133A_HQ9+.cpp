@@ -7,13 +7,12 @@ using namespace std;
 #define sz(x) (int)(x).size()
 
 void solve() {
-    int n = 100;
-
-    cout << "Before substract: " << n << endl;
-
-    n = n - 5;
-
-    cout << "After substract: " << n;
+    string st; cin >> st;
+    if(st.find('H') != string::npos) cout << "YES";     
+    else if(st.find('Q') != string::npos) cout << "YES";     
+    else if(st.find('9') != string::npos) cout << "YES";     
+    // else if(st[0] == '+') cout << "YES";     
+    else cout << "NO";
 }
 
 int main() {
