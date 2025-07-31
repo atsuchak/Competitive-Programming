@@ -7,13 +7,19 @@ using namespace std;
 #define sz(x) (int)(x).size()
 
 void solve() {
-    int n = 100;
+    int n; cin >> n;
+    vector<int> vec;
+    for(int i = 0; i < n; i++) {
+        int x; cin >> x;
+        vec.push_back(x);
+    }
 
-    cout << "Before substract: " << n << endl;
+    sort(vec.begin(), vec.end());
 
-    n = n - 5;
-
-    cout << "After substract: " << n;
+    for(auto a: vec) {
+        cout << a << " ";
+    }
+    
 }
 
 int main() {
