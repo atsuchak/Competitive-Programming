@@ -1,19 +1,48 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ff first
-#define ss second
-#define all(x) (x).begin(), (x).end()
-#define sz(x) (int)(x).size()
+void mergeArr(vector<int> &a, vector<int> &b, int x) {
+    vector<int> s;
+
+    for (int i = 0; i < a.size(); i++) s.push_back(a[i]);
+    for (int i = 0; i < b.size(); i++) s.push_back(b[i]);
+
+    sort(s.begin(), s.end());
+
+    bool check = 0;
+    for (int i = 0; i < s.size(); i++) {
+        if (s[i] == x) check = 1;
+    }
+    if (check && s[0] == 1) {
+        bool result = 1;
+        for (int i = 0; i < s.size() - 1; i++) {
+            if (!(s[i + 1] - s[i] <= 1)) {
+                result = 0;
+                break;
+            }
+        }
+        if (result) cout << "I become the guy." << endl;
+        else cout << "Oh, my keyboard!" << endl;
+    } else {
+        cout << "Oh, my keyboard!" << endl;
+    }
+}
+
+// for (it = s.begin(); it != s.end(); it++) cout << *it << " ";
 
 void solve() {
-    int n = 100;
 
-    cout << "Before substract: " << n << endl;
+    int x; cin >> x;
 
-    n = n - 5;
+    int m; cin >> m;
+    vector<int> a(m);
+    for (int i = 0; i < m ; i++) cin >> a[i];
 
-    cout << "After substract: " << n;
+    int n; cin >> n;
+    vector<int> b(n);
+    for (int i = 0; i < n; i++) cin >> b[i];
+
+    mergeArr(a, b, x);
 }
 
 int main() {
