@@ -38,7 +38,6 @@ void mergeArr(vector<int> &a, vector<int> &b, int x) {
 	} else {
 		cout << "Oh, my keyboard!" << endl;
 	}
-
 }
 
 void solve() {
