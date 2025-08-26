@@ -11,15 +11,5 @@ int main() {
 
 	string st; cin >> st;
 
-	for (int i = 0; i < st.size(); i++) {
-		if (st[i] == 'W' && st[i + 1] == 'U' && st[i + 2] == 'B') {
-			i += 2;
-			cout << " ";
-		} else {
-			cout << st[i];
-		}
-	}
-
-
 	return 0;
 }
