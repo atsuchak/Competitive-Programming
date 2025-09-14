@@ -9,7 +9,7 @@ int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
 
-	vector<string> store;
+	vector<string> store ;
 
 	int n; cin >> n;
 
