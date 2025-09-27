@@ -12,43 +12,36 @@ int main() {
     freopen("D:/Sublime file/input.txt", "r", stdin);
     freopen("D:/Sublime file/output.txt", "w", stdout);
 
-    int n; cin >> n;
+    string st; cin >> st;
+    bool check1 = 0;
+    bool check2 = 0;
 
-    vector<int> a(n);
-    for(int i = 0; i < n; i++) cin >> a[i];
+    for(int i = 1; i < st.size(); i++) {
+        if(st[0] == toupper(st[0]) && st[i] == toupper(st[i])) check1 = 1;
+        else {
+            check1 = 0;
+            break;
+        }
+    }   
 
-    sort(a.rbegin(), a.rend());
+    for(int i = 1; i < st.size(); i++) {
+        if(st[0] == tolower(st[0]) && st[i] == toupper(st[i])) check2 = 1;
+        else {
+            check2 = 0;
+            break;
+        }
+    }   
 
-    // for(int it: a) cout << it << " ";
-    //     cout << endl;
-
-    int cOne = 0, cTwo = 0, cThree = 0, cFour = 0;
-
-    for(int i = 0; i < n; i++) {
-        if(a[i] == 1) cOne++;
-        else if(a[i] == 2) cTwo++;
-        else if(a[i] == 3) cThree++;
-        if(a[i] == 4) cFour++;
+    if(st.size() == 1) {
+        st[0] = toupper(st[0]);
+    }else if(check1){
+        for(int i = 0; i < st.size(); i++) st[i] = tolower(st[i]); 
+    }else if(check2) {
+        st[0] = toupper(st[0]);
+        for(int i = 1; i < st.size(); i++) st[i] = tolower(st[i]); 
     }
 
-    int sum = cFour;
-    if(cOne >= cThree) {
-        cOne = cOne - cThree;
-        sum += cThree;
-    }else {
-        cOne = cOne - cThree;
-        sum += cThree;
-    }
-    sum += cTwo/2;
+    cout << st << endl;
 
-    if(cTwo%2 != 0 && cOne >= 3) sum += 2;
-    else if(cTwo%2 != 0 && cOne < 3) sum += 1;
-    else if(cTwo%2 == 0 && cOne >= 1) {
-        if(cOne%4 == 0) sum += cOne/4;
-        else sum += (cOne/4)+1;
-    }
-
-    cout << sum << endl;
-   
     return 0;
 }
