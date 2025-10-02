@@ -12,36 +12,36 @@ int main() {
     freopen("D:/Sublime file/input.txt", "r", stdin);
     freopen("D:/Sublime file/output.txt", "w", stdout);
 
-    string st; cin >> st;
-    bool check1 = 0;
-    bool check2 = 0;
+    int n; cin >> n;
 
-    for(int i = 1; i < st.size(); i++) {
-        if(st[0] == toupper(st[0]) && st[i] == toupper(st[i])) check1 = 1;
-        else {
-            check1 = 0;
-            break;
+    vector<string> st(n);
+    for(int i = 0; i < n; i++) cin >> st[i];
+
+        for(int i = 0; i < n; i++) {
+            string store = st[i];
+
+            int cnt = 0;
+
+            char k = '1';
+
+            for(int j = 0; j < n; j++) {
+                if(st[j] == store) {
+                    cnt++;
+                }
+
+                if(cnt == 2) {
+                    st[j] = st[j] + k;
+                    k++;
+                    cnt = 0;
+                }
+            } 
+
         }
-    }   
 
-    for(int i = 1; i < st.size(); i++) {
-        if(st[0] == tolower(st[0]) && st[i] == toupper(st[i])) check2 = 1;
-        else {
-            check2 = 0;
-            break;
+        for(int i = 0; i < n; i++) {
+            if(st[i].find('1'))  cout << st[i] << endl;
+            else cout << "OK" << endl;
         }
-    }   
 
-    if(st.size() == 1) {
-        st[0] = toupper(st[0]);
-    }else if(check1){
-        for(int i = 0; i < st.size(); i++) st[i] = tolower(st[i]); 
-    }else if(check2) {
-        st[0] = toupper(st[0]);
-        for(int i = 1; i < st.size(); i++) st[i] = tolower(st[i]); 
+        return 0;
     }
-
-    cout << st << endl;
-
-    return 0;
-}
