@@ -1,47 +1,37 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ff first
-#define ss second
-#define all(x) (x).begin(), (x).end()
-
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    freopen("D:/Sublime file/input.txt", "r", stdin);
-    freopen("D:/Sublime file/output.txt", "w", stdout);
+    // freopen("D:/File/input.txt", "r", stdin);
+    // freopen("D:/File/output.txt", "w", stdout);
 
-    int n; cin >> n;
+    int t_case = 1;  // cin >> t_case;
 
-    vector<string> st(n);
-    for(int i = 0; i < n; i++) cin >> st[i];
+    while (t_case--) {
+        int n;
+        cin >> n;
 
-        for(int i = 0; i < n; i++) {
-            string store = st[i];
+        vector<int> a(n);
+        for (int i = 0; i < n; i++)
+            cin >> a[i];
 
-            int cnt = 0;
+        int pos_val = 0, neg_val = 0;
 
-            char k = '1';
-
-            for(int j = 0; j < n; j++) {
-                if(st[j] == store) {
-                    cnt++;
-                }
-
-                if(cnt == 2) {
-                    st[j] = st[j] + k;
-                    k++;
-                    cnt = 0;
-                }
-            } 
-
+        for (int i = 0; i < n; i++) {
+            if (a[i] > 0)
+                pos_val += a[i];
+            else {
+                if (pos_val < 1)
+                    neg_val++;
+                else
+                    pos_val--;
+            }
         }
-
-        for(int i = 0; i < n; i++) {
-            if(st[i].find('1'))  cout << st[i] << endl;
-            else cout << "OK" << endl;
-        }
-
-        return 0;
+        cout << neg_val << endl;
     }
+
+    return 0;
+}
