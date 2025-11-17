@@ -3,17 +3,27 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ff first
-#define ss second
-#define all(x) (x).begin(), (x).end()
+void solve() {
+  
+}
 
 int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
+  ios_base::sync_with_stdio(false);
+  cin.tie(nullptr);
 
-    $0
+    #ifndef ONLINE_JUDGE
+  freopen("D:/File/input.txt", "r", stdin);
+  freopen("D:/File/output.txt", "w", stdout);
+    #endif
 
-    return 0;
+  int t_case = 1; 
+  // cin >> t_case;
+
+  while(t_case--) {
+    solve();
+  }
+
+  return 0;
 }
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
