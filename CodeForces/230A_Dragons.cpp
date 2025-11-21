@@ -13,18 +13,23 @@ int main() {
     while (t_case--) {
         int s, n;
         cin >> s >> n;
+
         vector<pair<int, int>> a(n);
         for (int i = 0; i < n; i++) {
             cin >> a[i].first >> a[i].second;
         }
 
-        bool chk = 0;
+        sort(a.begin(), a.end());
+
+        bool chk = 1;
         for (int i = 0; i < n; i++) {
-            if (s >= a[i].first) {
-                s += a[i].second;
-                chk = 1;
+            if (s >= a[i].first) s += a[i].second;
+            else {
+                chk = 0;
+                break;
             }
         }
+
         if (chk)
             cout << "YES" << endl;
         else
