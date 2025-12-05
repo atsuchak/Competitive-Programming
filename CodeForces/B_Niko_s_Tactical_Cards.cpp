@@ -24,7 +24,7 @@ typedef vector<pii> vpii;
 typedef vector<pll> vpll;
 
 const int MOD = 1e9 + 7;
-const int INF = 1e18;
+const ll INF = 1e18;
 
 void _print(int n) {cerr << n;}
 void _print(ll n) {cerr << n;}
@@ -44,22 +44,21 @@ template<class T, class V> void _print(map<T, V> m) {
 
 
 void solve() {
-    int n, k; cin >> n >> k;
+    int n; cin >> n;
+
+    vi a(n), b(n);
+    for(int i = 0; i < n; i++) cin >> a[i];
+    for(int i = 0; i < n; i++) cin >> b[i];
+
+    int k; 
+    a[0] < b[0]? k = a[0] : k = b[0];
     
-    string st; cin >> st;
-    
-    int init = -1, cnt = 0;
-    
-    for (int i = 0; i < n; i++) {
-        if (st[i] == '1') {
-            if (i <= init) init = max(init, i + k);
-            else init = i + k;
-        }
-        
-        if (i > init && st[i] == '0') cnt++;
+    for(int i = 0; i < n; i++) {
+        if(abs(k - a[i]) > abs(b[i] - k)) k -= a[i];
+        else k = b[i]-k;
     }
-    
-    cout << cnt << endl;
+
+    cout << k << endl;
 }
 
 int main() {
@@ -67,8 +66,8 @@ int main() {
     cin.tie(nullptr);
 
     #ifndef ONLINE_JUDGE
-        // freopen("D:/File/input.txt", "r", stdin);
-        // freopen("D:/File/output.txt", "w", stdout);
+        freopen("D:/File/input.txt", "r", stdin);
+        freopen("D:/File/output.txt", "w", stdout);
         freopen("D:/File/error.txt", "w", stderr);
     #endif
 
