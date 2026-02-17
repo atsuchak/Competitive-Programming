@@ -51,9 +51,7 @@ void solve() {
 
     for(int i = 0; i < sz(st); i++) {
         if(i == 0 && st[i] == '9') continue;
-        else if(i != 0 && st[i] == '9') st[i] = '0';
         else if(st[i] > '4') st[i] = '9'-st[i]+'0';
-
     }
 
     cout << st << endl;

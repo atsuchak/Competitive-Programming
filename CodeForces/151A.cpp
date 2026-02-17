@@ -6,7 +6,7 @@
 // --------------------------------------------------------------- //
 // --------------------------------------------------------------- //
 
-//Problem link: https://codeforces.com/problemset/problem/4/C
+//Problem link: https://codeforces.com/problemset/problem/151/A
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -56,20 +56,14 @@ template<class T, class V> void _print(map<T, V> m) {
 
 
 void solve() {
-    int n; cin >> n;
-    
-    map<string, int> mp;
-    
-    while(n--) {
-        string st; cin >> st;
-        if(mp[st] == 0) {
-            mp[st] = 1;
-            cout << "OK" << endl;
-        }else {
-            cout << st << mp[st] << endl;
-            mp[st]++;
-        }
-    }
+    int n, k, l, c, d, p, nl, np; cin >> n >> k >> l >> c >> d >> p >> nl >> np;
+
+    int totalML= (k*l)/nl;
+    int totalLime = c*d;
+    int totalSalt = p/np;
+
+    // cout << totalML << " " << totalLime << " " << totalSalt << endl;
+    cout << min(totalML, min(totalSalt, totalLime))/n << endl;
 }
 
 int main() {
