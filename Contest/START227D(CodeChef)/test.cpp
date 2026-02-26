@@ -33,31 +33,14 @@ const int MOD = 1e9 + 7; const int INF = 1e18;
 
 
 void solve() {
-    int a, b; 
-
-    cout << "Enter 1st number: ";
-    cin >> a;
-    
-    cout << "Enter 2nd number: ";
-    cin >> b;
-
-    cout << "Before swap: " << nl;
-    cout << "a = " << a << "\tb = " << b << nl;
-
-    a = a+b;
-    b = a-b;
-    a = a-b;
-    
-    cout << "Before swap: " << nl;
-    cout << "a = " << a << "\tb = " << b << nl;
     
 }
 
 int32_t main() {
-    // ios_base::sync_with_stdio(0); cin.tie(0);
+    ios_base::sync_with_stdio(0); cin.tie(0);
 
     #ifndef ONLINE_JUDGE
-        // freopen("D:/File/input.txt", "r", stdin); freopen("D:/File/output.txt", "w", stdout);
+        freopen("D:/File/input.txt", "r", stdin); freopen("D:/File/output.txt", "w", stdout);
     #endif
 
     int t = 1;
