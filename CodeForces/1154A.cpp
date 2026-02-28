@@ -2,7 +2,7 @@
 // ==      Logic works — until the judge executes       === //
 // ======================================================== //
 
-//Problem link: 
+//Problem link: https://codeforces.com/problemset/problem/1154/A
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -20,32 +20,27 @@ const int MOD = 1e9 + 7; const ll INF = 1e18;
 
 
 void solve() {
-	string st1, st2; cin >> st1 >> st2;
+    vi a(4);
+    for(auto &it : a) cin >> it ;
 
-	for(auto &it: st1) it = tolower(it);
-	for(auto &it: st2) it = tolower(it);
-
-	for(int i = 0; i < sz(st1); i++) {
-		if(st1[i] > st2[i]) {cout << 1 << endl; return;}
-		if(st1[i] < st2[i]) {cout << -1 << endl; return;}
-	}
-
-	cout << 0 << endl;
+    sort(all(a));
+    for(int i = 0; i < 3; i++) cout << a[3] - a[i] << " ";
+    cout << endl;
 }
 
 int main() {
-	ios_base::sync_with_stdio(0); cin.tie(0);
+    ios_base::sync_with_stdio(0); cin.tie(0);
 
-	#ifndef ONLINE_JUDGE
-		freopen("D:/File/input.txt", "r", stdin); freopen("D:/File/output.txt", "w", stdout);
-	#endif
+    #ifndef ONLINE_JUDGE
+        freopen("D:/File/input.txt", "r", stdin); freopen("D:/File/output.txt", "w", stdout);
+    #endif
 
-	int t = 1;
-	// cin >> t;
+    int t = 1;
+    // cin >> t;
 
-	for(int i = 0; i < t; i++) solve();
+    for(int i = 0; i < t; i++) solve();
 
-	return 0;
+    return 0;
 } 
 
 // coded by আহনাফ তাজওয়ার সুচক
