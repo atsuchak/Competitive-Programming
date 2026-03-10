@@ -1,62 +1,66 @@
-// ======================================================== //
-// ==      Logic works — until the judge executes       === //
-// ======================================================== //
-
-//Problem link: https://codeforces.com/contest/2195/problem/B
+//Problem link: https://codeforces.com/problemset/problem/2195/B
 
 #include <bits/stdc++.h>
 using namespace std;
 
+#define int long long
+
+typedef vector<int> vi; typedef vector<string> vs;
+typedef vector<vector<int>> vvi;
+typedef pair<int, int> pii; typedef vector<char> vc;
+typedef vector<pair<int, int>> vpii;
+
+#define nl '\n'
+#define yes cout << "YES" << nl
+#define no cout << "NO" << nl
+#define pb push_back
+#define ret(x) {cout << x << nl; return;}
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
-#define sz(x) (int)(x).size()
-#define pb push_back
-#define mp make_pair
-#define ff first
-#define ss second
+#ifndef ONLINE_JUDGE
+    #define dbg(x) cerr << "["#x"]: " << x << nl
+#else
+    #define dbg(x)
+#endif
 
-typedef vector<int> vi; typedef long long ll; typedef vector<ll> vl;
-typedef vector<char> vc; typedef vector<string> vs;
-typedef pair<int, int> pii; typedef pair<ll, ll> pll;
-typedef vector<pii> vpii; typedef vector<pll> vpll;
+template<typename T> istream &operator>>(istream &it, vector<T> &v) { for (auto &i : v) it >> i; return it; }
+template<typename T> ostream &operator<<(ostream &it, const vector<T> &v) {
+    for (int i = 0; i < v.size(); i++) it << v[i] << (i == v.size() - 1 ? "" : " "); return it << nl; }
 
-const int MOD = 1e9 + 7; const ll INF = 1e18;
+const int MOD = 1e9 + 7; const int INF = 1e18;
 
 
 void solve() {
     int n; cin >> n;
 
-    vi a(n);
-    for(int i = 0; i < n; i++) cin >> a[i];
-    vi tmp;
-    for(int i = 0; i < sz(a); i++) tmp.pb(a[i]);
+    vi a(n+1);
+    for(int i = 1; i <= n; i++) cin >> a[i];
 
-    for(int i = 0; i < n/2; i++) 
-        if(a[i] > a[(2*(i+1))-1]) swap(a[i], a[(2*(i+1))-1]);
-
+    vi tmp = a;
     sort(all(tmp));
-    bool chk = 1;
-    for(int i = 0; i < n; i++) {
-        if(a[i] != tmp[i]) {
-            chk = 0;
-            break;
-        }
-    }
 
-    chk? cout << "YES" << endl : cout << "NO" << endl; 
+    for(int i = 1; i <= n/2; i++) 
+        if(a[i] > a[2*i] && a[i]/a[2*i] == 2) swap(a[i], a[2*i]);
+
+    tmp == a? yes : no;
 }
 
-int main() {
-    ios_base::sync_with_stdio(false); cin.tie(nullptr);
+int32_t main() {
+    ios_base::sync_with_stdio(0); cin.tie(0);
 
     #ifndef ONLINE_JUDGE
-        freopen("D:/File/input.txt", "r", stdin); freopen("D:/File/output.txt", "w", stdout);
+        freopen("input.txt", "r", stdin); freopen("output.txt", "w", stdout);
     #endif
 
-    int t_case = 1;
-    cin >> t_case;
+    int t = 1;
+    cin >> t;
 
-    while (t_case--) solve();
+    for(int i = 1; i <= t; i++) {
+        // cout << "Case " << i << ": ";
+        solve();
+    }
 
     return 0;
 } 
+
+// coded by আহনাফ তাজওয়ার সুচক
